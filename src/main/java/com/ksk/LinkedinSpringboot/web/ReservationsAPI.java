@@ -16,7 +16,7 @@ import java.util.List;
 import java.util.Queue;
 
 @RestController
-@RequestMapping
+@RequestMapping("/api/reservations")
 public class ReservationsAPI {
 
     private final ReservationService reservationService;
@@ -26,7 +26,7 @@ public class ReservationsAPI {
         this.reservationService = reservationService;
     }
 
-    @GetMapping("/api/reservations")
+    @GetMapping
     public List<RoomReservation> getReservations(@RequestParam(name = "date", required = false) String date){
 
         Date dates = DateUtils.createDateFromDateString(date);
